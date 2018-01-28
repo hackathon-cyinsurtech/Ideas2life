@@ -1,0 +1,23 @@
+<h1 class="thin text-center">Insuretech Predictions</h1>
+<h3 class="thin text-center">by <a href="https://www.ideas2life.com.cy" target="_blank" rel="noopener">Ideas2life
+    Team</a>&nbsp;-&nbsp;<a href="https://www.foody.com.cy" target="_blank" rel="noopener">foody.com.cy</a></h3>
+
+<div class="main-content">
+    <h2 class="text-center thin">Current Prediction</h2>
+    <table class="table" *ngIf="currentPrediction">
+        <thead>
+        <tr>
+            <th>Count of Orders / Month</th>
+            <th>Volume of Orders / Month</th>
+            <th>Distance Ratio / Month</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{currentPrediction.count}}</td>
+            <td>{{currentPrediction.volume}}</td>
+            <td>{{currentPrediction.travelDistance}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

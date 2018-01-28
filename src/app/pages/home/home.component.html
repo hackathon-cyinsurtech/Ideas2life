@@ -1,0 +1,83 @@
+<h1 class="thin text-center">Insuretech Predictions</h1>
+<h3 class="thin text-center">by <a href="https://www.ideas2life.com.cy" target="_blank" rel="noopener">Ideas2life
+    Team</a>&nbsp;-&nbsp;<a href="https://www.foody.com.cy" target="_blank" rel="noopener">foody.com.cy</a></h3>
+
+<div class="main-content">
+    <h2 class="text-center thin">Please enter your details</h2>
+    <div class="c-restaurant--information">
+        <form [formGroup]="restaurantInformationForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label class="is-flex">
+                    Postcode:
+                    <input formControlName="postcode" type="number" class="input input-block">
+                </label>
+            </div>
+            <div class="form-group">
+                <div class="c-date--scheduling">
+                    <label>Delivery Times</label>
+                    <div class="wrapper">
+                        <i2l-datescheduling class="input-block" (onDateChanged)="dateChangedDeliveryTimes($event)"
+                                            (onComponentInit)="getCurrentValueDeliveryTimes($event)"></i2l-datescheduling>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="is-flex">
+                    Delivery Zones (CSV):
+                    <input type="text" class="input input-block" formControlName="deliveryZones">
+                </label>
+            </div>
+            <div class="form-group">
+                <div class="form-group--half">
+                    <label class="is-flex">
+                        Delivery Cost:
+                        <input formControlName="deliveryCost" type="number" class="input input-block">
+                    </label>
+                </div>
+                <div class="form-group--half">
+                    <label class="is-flex">
+                        Minimum Order:
+                        <input formControlName="minimumOrder" type="number" class="input input-block">
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="is-flex">
+                    Restaurant Category:
+                    <select class="select input-block" formControlName="restaurantCategory">
+                        <option *ngFor="let category of mockRestaurantCategories">
+                            {{category}}
+                        </option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="is-flex">
+                    Average Price Range per Person:
+                    <select class="select input-block" formControlName="averagePricePerPerson">
+                        <option *ngFor="let range of averagePricePerPersonRanges">
+                            {{range}}
+                        </option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-group">
+                <div class="form-group--half">
+                    <label class="is-flex">
+                        Minimum Item Price:
+                        <input formControlName="minItemPrice" type="number" class="input input-block">
+                    </label>
+                </div>
+                <div class="form-group--half">
+                    <label class="is-flex">
+                        Maximum Item Price:
+                        <input formControlName="maxItemPrice" type="number" class="input input-block">
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
